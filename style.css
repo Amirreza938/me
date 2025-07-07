@@ -446,11 +446,12 @@ body {
     box-shadow: 0 20px 40px rgba(96, 165, 250, 0.2);
 }
 
-.project-image {
-    height: 200px;
-    background: linear-gradient(45deg, #60a5fa, #a855f7);
-    position: relative;
-    overflow: hidden;
+.project-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
 }
 
 .project-overlay {
