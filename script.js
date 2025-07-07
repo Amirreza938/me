@@ -279,60 +279,38 @@ class CursorEffect {
     }
 
     createCursor() {
-        const dot = document.createElement('div');
-        dot.className = 'cursor-dot';
-        dot.style.cssText = `
-            position: fixed;
-            width: 8px;
-            height: 8px;
-            background: #60a5fa;
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 9999;
-            transition: transform 0.1s ease;
-        `;
+        // const dot = document.createElement('div');
+        // dot.className = 'cursor-dot';
+        // dot.style.cssText = `
+        //     position: fixed;
+        //     width: 8px;
+        //     height: 8px;
+        //     background: #60a5fa;
+        //     border-radius: 50%;
+        //     pointer-events: none;
+        //     z-index: 9999;
+        //     transition: transform 0.1s ease;
+        // `;
         
-        const outline = document.createElement('div');
-        outline.className = 'cursor-outline';
-        outline.style.cssText = `
-            position: fixed;
-            width: 30px;
-            height: 30px;
-            border: 2px solid rgba(96, 165, 250, 0.3);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 9998;
-            transition: all 0.3s ease;
-        `;
+        // const outline = document.createElement('div');
+        // outline.className = 'cursor-outline';
+        // outline.style.cssText = `
+        //     position: fixed;
+        //     width: 30px;
+        //     height: 30px;
+        //     border: 2px solid rgba(96, 165, 250, 0.3);
+        //     border-radius: 50%;
+        //     pointer-events: none;
+        //     z-index: 9998;
+        //     transition: all 0.3s ease;
+        // `;
         
         document.body.appendChild(dot);
         document.body.appendChild(outline);
     }
 }
 
-// Parallax Effect - DISABLED to fix spacing issues
-class ParallaxEffect {
-    constructor() {
-        // Disabled parallax effect to prevent spacing issues
-        // this.init();
-    }
 
-    init() {
-        // Parallax disabled
-        /*
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const sections = document.querySelectorAll('.section:not(#contact)');
-            
-            sections.forEach((section, index) => {
-                const speed = 0.1 + (index * 0.05);
-                const yPos = -(scrolled * speed);
-                section.style.transform = `translateY(${yPos}px)`;
-            });
-        });
-        */
-    }
-}
 
 // Loading Animation
 class LoadingAnimation {
@@ -528,7 +506,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize ripple effect
     new RippleEffect();
     
-    console.log("🚀 3D Portfolio loaded successfully!");
+    console.log("3D Portfolio loaded successfully!");
 });
 
 // Add scroll-to-top functionality
