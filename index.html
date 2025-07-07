@@ -3,83 +3,280 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amirreza Asgharzadeh-Web Developer</title>
+    <title>Amirreza Asgharzadeh - 3D Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Amirreza Asgharzadeh</h1>
-        <p>Computer Engineering Student | Web Developer</p>
-        <div class="contact">
-            <a href="mailto:amirrezaasgharzadeh938@gmail.com">amirrezaasgharzadeh938@gmail.com</a>
-            <a href="https://github.com/Amirreza938">Github</a>
-            <a href="https://www.linkedin.com/in/Amirreza Asgharzadeh/">LinkedIn</a>
+    <!-- Particle System -->
+    <div class="particles-container">
+        <canvas id="particles-canvas"></canvas>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">AA</div>
+        <ul class="nav-links">
+            <li><a href="#home" data-section="home">Home</a></li>
+            <li><a href="#about" data-section="about">About</a></li>
+            <li><a href="#education" data-section="education">Education</a></li>
+            <li><a href="#skills" data-section="skills">Skills</a></li>
+            <li><a href="#projects" data-section="projects">Projects</a></li>
+            <li><a href="#contact" data-section="contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <div class="hero-card">
+                <h1 class="hero-title">
+                    <span class="typing-text">Amirreza Asgharzadeh</span>
+                    <span class="cursor">|</span>
+                </h1>
+                <p class="hero-subtitle">Computer Engineering Student | Web Developer</p>
+                <div class="hero-buttons">
+                    <a href="#about" class="btn btn-primary">Explore</a>
+                    <a href="#contact" class="btn btn-secondary">Contact</a>
+                </div>
+            </div>
         </div>
-    </header>
-
-    <section id="about">
-        <h2>About Me</h2>
-        <p> I am a computer engineering student at Ferdowsi University of Mashhad and a passionate frontend web developer. 
-            I love building beautiful and functional interfaces using modern technologies. 
-            I also have an interest in backend development and constantly strive to learn and improve in both areas. 
-            I am excited to contribute to the growth and development of the web community and make a positive impact on the world through my work.</p>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
     </section>
 
-    <section id="education">
-        <h2>Education</h2>
-        <ul>
-            <li><strong>B.Sc. in Computer Engineering</strong>Ferdowsi University of Mashhad, Iran</li>
-            <li><strong>Diploma in Math & Physics</strong>Mashhad, Iran</li>
-        </ul>
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="fade-in">I am a computer engineering student at Ferdowsi University of Mashhad and a passionate frontend web developer. 
+                        I love building beautiful and functional interfaces using modern technologies. 
+                        I also have an interest in backend development and constantly strive to learn and improve in both areas. 
+                        I am excited to contribute to the growth and development of the web community and make a positive impact on the world through my work.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="20">0</span>
+                        <span class="stat-label">Projects</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="10">0</span>
+                        <span class="stat-label">Skills</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="3">0</span>
+                        <span class="stat-label">Years</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section id="skills">
-        <h2>Technical Skills</h2>
-        <ul>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-            <li>React</li>
-            <li>Node.js</li>
-            <li>Express.js</li>
-            <li>SQL</li>
-            <li>MySQL</li>
-            <li>Git</li>
-            <li>GitHub</li>
-            <li>Linux</li>
-            <li>Qt, Operating Systems</li>
-        </ul>
-        <h3>Soft Skills</h3>
-        <ul>
-            <li>Public Speaking, Listening, Writing</li>
-            <li>Teamwork, Collaboration, Communication</li>
-            <li>Problem Solving, Analytical Thinking</li>
-        </ul>
+    <!-- Education Section -->
+    <section id="education" class="section">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>B.Sc. in Computer Engineering</h3>
+                        <p>Ferdowsi University of Mashhad, Iran</p>
+                        <span class="timeline-date">2020 - Present</span>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Diploma in Math & Physics</h3>
+                        <p>Mashhad, Iran</p>
+                        <span class="timeline-date">2020</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section id="projects">
-        <h2>projects</h2>
-        <ul>
-            <li><strong>Hotel & Flight Booking Website</strong> – A simple booking UI with dark mode. [<a href="https://github.com/Amirreza938/Front_BookingWebsite">Github</a>]</li>
-            <li><strong>Language School Management System</strong> – Built with React, JS, CSS. [<a href="https://github.com/Amirreza938/Websites">Github</a>]</li>
-        </ul>
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Frontend</h3>
+                    <div class="skill-bars">
+                        <div class="skill-bar" data-skill="90">
+                            <span class="skill-name">HTML</span>
+                            <div class="skill-progress"><div class="skill-fill"></div></div>
+                        </div>
+                        <div class="skill-bar" data-skill="85">
+                            <span class="skill-name">CSS</span>
+                            <div class="skill-progress"><div class="skill-fill"></div></div>
+                        </div>
+                        <div class="skill-bar" data-skill="80">
+                            <span class="skill-name">JavaScript</span>
+                            <div class="skill-progress"><div class="skill-fill"></div></div>
+                        </div>
+                        <div class="skill-bar" data-skill="75">
+                            <span class="skill-name">React</span>
+                            <div class="skill-progress"><div class="skill-fill"></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Backend</h3>
+                    <div class="skill-bars">
+                        <div class="skill-bar" data-skill="70">
+                            <span class="skill-name">Node.js</span>
+                            <div class="skill-progress"><div class="skill-fill"></div></div>
+                        </div>
+                        <div class="skill-bar" data-skill="65">
+                            <span class="skill-name">Express.js</span>
+                            <div class="skill-progress"><div class="skill-fill"></div></div>
+                        </div>
+                        <div class="skill-bar" data-skill="75">
+                            <span class="skill-name">SQL</span>
+                            <div class="skill-progress"><div class="skill-fill"></div></div>
+                        </div>
+                        <div class="skill-bar" data-skill="70">
+                            <span class="skill-name">MySQL</span>
+                            <div class="skill-progress"><div class="skill-fill"></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools</h3>
+                    <div class="skill-bars">
+                        <div class="skill-bar" data-skill="85">
+                            <span class="skill-name">Git</span>
+                            <div class="skill-progress"><div class="skill-fill"></div></div>
+                        </div>
+                        <div class="skill-bar" data-skill="80">
+                            <span class="skill-name">GitHub</span>
+                            <div class="skill-progress"><div class="skill-fill"></div></div>
+                        </div>
+                        <div class="skill-bar" data-skill="75">
+                            <span class="skill-name">Linux</span>
+                            <div class="skill-progress"><div class="skill-fill"></div></div>
+                        </div>
+                        <div class="skill-bar" data-skill="65">
+                            <span class="skill-name">Qt</span>
+                            <div class="skill-progress"><div class="skill-fill"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="soft-skills">
+                <h3>Soft Skills</h3>
+                <div class="soft-skills-grid">
+                    <div class="soft-skill">Public Speaking</div>
+                    <div class="soft-skill">Teamwork</div>
+                    <div class="soft-skill">Problem Solving</div>
+                    <div class="soft-skill">Communication</div>
+                    <div class="soft-skill">Analytical Thinking</div>
+                    <div class="soft-skill">Leadership</div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section id="certificates">
-        <h2>Certificates</h2>
-        <p><strong>Data League Challenge (Advanced Level) - 3rd Place</strong> (Issued by Part Company, Mar 2025 – Present)</p>
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <a href="https://github.com/Amirreza938/Front_BookingWebsite" class="project-link">View Project</a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Hotel & Flight Booking Website</h3>
+                        <p>A simple booking UI with dark mode functionality</p>
+                        <div class="project-tech">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <a href="https://github.com/Amirreza938/Websites" class="project-link">View Project</a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Language School Management System</h3>
+                        <p>Built with React, JS, CSS for managing language courses</p>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>JavaScript</span>
+                            <span>CSS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section id="Languages">
-        <h2>Languages</h2>
-        <ul>
-            <li>Persian - Native</li>
-            <li>English - Professional</li>
-        </ul>
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <a href="mailto:amirrezaasgharzadeh938@gmail.com">amirrezaasgharzadeh938@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">🐙</div>
+                        <div class="contact-details">
+                            <h3>GitHub</h3>
+                            <a href="https://github.com/Amirreza938">Amirreza938</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">💼</div>
+                        <div class="contact-details">
+                            <h3>LinkedIn</h3>
+                            <a href="https://www.linkedin.com/in/Amirreza Asgharzadeh/">Amirreza Asgharzadeh</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-right">
+                    <div class="certificates">
+                        <h3>Certificates</h3>
+                        <div class="certificate-item">
+                            <strong>Data League Challenge (Advanced Level) - 3rd Place</strong>
+                            <p>Issued by Part Company, Mar 2025</p>
+                        </div>
+                    </div>
+                    <div class="languages">
+                        <h3>Languages</h3>
+                        <div class="language-item">
+                            <span>Persian</span>
+                            <span class="language-level">Native</span>
+                        </div>
+                        <div class="language-item">
+                            <span>English</span>
+                            <span class="language-level">Professional</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
-    
+
     <footer>
-        <p>&copy; 2025 Amirreza Asgharzadeh</p>
+        <p>&copy; 2025 Amirreza Asgharzadeh. All rights reserved.</p>
     </footer>
 
     <script src="script.js"></script>
