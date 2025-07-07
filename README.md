@@ -12,7 +12,6 @@ A modern, interactive portfolio website built with HTML, CSS, and JavaScript fea
 - **Interactive Navigation**: Active section highlighting and smooth scrolling
 - **Animated Skill Bars**: Progressive skill level visualization
 - **Dynamic Counters**: Animated statistics counters
-- **Custom Cursor Effects**: Enhanced mouse interaction feedback
 - **Ripple Button Effects**: Interactive button press feedback
 
 ## 📁 File Structure
