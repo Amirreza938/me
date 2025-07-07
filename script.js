@@ -54,6 +54,8 @@ class ParticleSystem {
             this.ctx.beginPath();
             this.ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
             this.ctx.fillStyle = `rgba(96, 165, 250, ${particle.opacity})`;
+            // const hue = (Date.now() / 50 + particle.x) % 360;
+            // this.ctx.fillStyle = `hsla(${hue}, 100%, 70%, ${particle.opacity})`;
             this.ctx.fill();
         });
         
