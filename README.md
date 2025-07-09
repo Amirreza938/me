@@ -4,7 +4,7 @@ A modern, interactive portfolio website built with HTML, JavaScript, and **Tailw
 
 Although I am familiar with React, I intentionally built this project using vanilla HTML, JavaScript, and Tailwind CSS for educational purposes—to deepen my understanding of core web technologies and custom interactivity without relying on frameworks.
 
-## 🚀 Features
+## Features
 
 - **Interactive Particle System**: Dynamic floating particles with connection lines
 - **3D Tilt Effects**: Cards and elements respond to mouse movement with 3D transformations
@@ -16,7 +16,7 @@ Although I am familiar with React, I intentionally built this project using vani
 - **Dynamic Counters**: Animated statistics counters
 - **Ripple Button Effects**: Interactive button press feedback
 
-## 📁 File Structure
+## File Structure
 
 ```
 task1-html/

@@ -20,11 +20,17 @@ class ParticleSystem {
         this.canvas.width = window.innerWidth;
         this.canvas.height = window.innerHeight;
     }
-
     createParticles() {
         const particleCount = Math.floor((this.canvas.width * this.canvas.height) / 15000);
-        
-        for (let i = 0; i < particleCount; i++) {
+        this.particles = Array.from({ length: particleCount},() => ({
+            x: Math.random() * this.canvas.width,
+            y: Math.random() * this.canvas.height,
+            vx: (Math.random() - 0.5) * 0.5,
+            vy: (Math.random() - 0.5) * 0.5,
+            size: 1 + Math.random() * 2,
+            opacity: Math.random() * 0.5 + 0.2
+        }));
+        /*for (let i = 0; i < particleCount; i++) {
             this.particles.push({
                 x: Math.random() * this.canvas.width,
                 y: Math.random() * this.canvas.height,
@@ -33,7 +39,7 @@ class ParticleSystem {
                 size: Math.random() * 2 + 1,
                 opacity: Math.random() * 0.5 + 0.2
             });
-        }
+        }*/
     }
 
     animate() {
