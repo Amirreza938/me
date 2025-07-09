@@ -277,37 +277,6 @@ class CursorEffect {
             outline.style.top = e.clientY + 'px';
         });
     }
-
-    createCursor() {
-        // const dot = document.createElement('div');
-        // dot.className = 'cursor-dot';
-        // dot.style.cssText = `
-        //     position: fixed;
-        //     width: 8px;
-        //     height: 8px;
-        //     background: #60a5fa;
-        //     border-radius: 50%;
-        //     pointer-events: none;
-        //     z-index: 9999;
-        //     transition: transform 0.1s ease;
-        // `;
-        
-        // const outline = document.createElement('div');
-        // outline.className = 'cursor-outline';
-        // outline.style.cssText = `
-        //     position: fixed;
-        //     width: 30px;
-        //     height: 30px;
-        //     border: 2px solid rgba(96, 165, 250, 0.3);
-        //     border-radius: 50%;
-        //     pointer-events: none;
-        //     z-index: 9998;
-        //     transition: all 0.3s ease;
-        // `;
-        
-        document.body.appendChild(dot);
-        document.body.appendChild(outline);
-    }
 }
 
 

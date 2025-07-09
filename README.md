@@ -277,34 +277,7 @@ class ScrollAnimations {
 - Animated counters with smooth transitions
 - Skill bar progress animations
 
-#### 4. TiltEffect Class
-```javascript
-class TiltEffect {
-    init() {
-        cards.forEach(card => {
-            card.addEventListener('mousemove', (e) => {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                
-                const centerX = rect.width / 2;
-                const centerY = rect.height / 2;
-                
-                const rotateX = (y - centerY) / 10;
-                const rotateY = (centerX - x) / 10;
-                
-                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(10px)`;
-            });
-        });
-    }
-}
-```
-**Features:**
-- 3D tilt effect based on mouse position
-- Smooth transitions on mouse enter/leave
-- Perspective transformation for depth
-
-#### 5. CursorEffect Class
+#### 4. CursorEffect Class
 ```javascript
 class CursorEffect {
     createCursor() {
@@ -323,7 +296,7 @@ class CursorEffect {
 - Smooth following animation
 - Dynamic CSS injection
 
-#### 6. LoadingAnimation Class
+#### 5. LoadingAnimation Class
 ```javascript
 class LoadingAnimation {
     init() {
@@ -433,7 +406,6 @@ npx http-server
 - **Hover Effects**: Transform and shadow changes
 - **Click Animations**: Ripple effects on buttons
 - **Scroll Triggers**: Fade-in and progress animations
-- **Mouse Tracking**: Custom cursor and tilt effects
 
 ### Animation Types
 - **CSS Keyframes**: Bounce, blink, gradient-shift
