@@ -1,4 +1,4 @@
-# 3D Interactive Portfolio Website
+# A Simple 3D Interactive Portfolio Website
 
 A modern, interactive portfolio website built with HTML, CSS, and JavaScript featuring 3D effects, animations, and a particle system background.
 

@@ -240,7 +240,7 @@ body {
     border-radius: 2px;
 }
 
-/* About Section */
+/* About Section */ 
 .about-content {
     display: grid;
     grid-template-columns: 2fr 1fr;
