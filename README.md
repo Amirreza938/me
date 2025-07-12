@@ -131,9 +131,9 @@ This creates optimized files in the `docs` directory, ready for deployment.
 
 ###  Skills Section
 - **Technical Skills**: 
-  - **Frontend**: HTML/CSS (90%), JavaScript (85%), React (80%), Vue.js (75%)
-  - **Backend**: Node.js (70%), Python (65%), Express.js (75%), MongoDB (70%)
-  - **Tools**: Git (85%), VS Code (80%), Docker (75%), AWS (65%)
+  - **Frontend**: HTML/CSS (50%), JavaScript (40%), React (30%), Vue.js (25%)
+  - **Backend**: Node.js (40%), Python (60%), Express.js (35%), MongoDB (60%)
+  - **Tools**: Git (80%), VS Code (80%)
 - **Animated Progress Bars**: Visual representation of skill levels
 - **Soft Skills**: Communication, teamwork, problem-solving, and leadership
 
