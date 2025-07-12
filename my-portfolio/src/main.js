@@ -1,3 +1,5 @@
+import './style.css'
+
 console.log("Welcome to my website!");
 
 // Particle System
@@ -20,6 +22,7 @@ class ParticleSystem {
         this.canvas.width = window.innerWidth;
         this.canvas.height = window.innerHeight;
     }
+    
     createParticles() {
         const particleCount = Math.floor((this.canvas.width * this.canvas.height) / 15000);
         this.particles = Array.from({ length: particleCount},() => ({
@@ -30,16 +33,6 @@ class ParticleSystem {
             size: 1 + Math.random() * 2,
             opacity: Math.random() * 0.5 + 0.2
         }));
-        /*for (let i = 0; i < particleCount; i++) {
-            this.particles.push({
-                x: Math.random() * this.canvas.width,
-                y: Math.random() * this.canvas.height,
-                vx: (Math.random() - 0.5) * 0.5,
-                vy: (Math.random() - 0.5) * 0.5,
-                size: Math.random() * 2 + 1,
-                opacity: Math.random() * 0.5 + 0.2
-            });
-        }*/
     }
 
     animate() {
@@ -166,7 +159,7 @@ class ScrollAnimations {
 
     updateNavbar() {
         window.addEventListener('scroll', () => {
-            const navbar = document.querySelector('.navbar');
+            const navbar = document.querySelector('nav');
             if (window.scrollY > 100) {
                 navbar.style.background = 'rgba(15, 23, 42, 0.95)';
             } else {
@@ -274,16 +267,28 @@ class CursorEffect {
             const dot = document.querySelector('.cursor-dot');
             const outline = document.querySelector('.cursor-outline');
             
-            dot.style.left = e.clientX + 'px';
-            dot.style.top = e.clientY + 'px';
+            if (dot) {
+                dot.style.left = e.clientX + 'px';
+                dot.style.top = e.clientY + 'px';
+            }
             
-            outline.style.left = e.clientX + 'px';
-            outline.style.top = e.clientY + 'px';
+            if (outline) {
+                outline.style.left = e.clientX + 'px';
+                outline.style.top = e.clientY + 'px';
+            }
         });
     }
+
+    createCursor() {
+        const dot = document.createElement('div');
+        dot.className = 'cursor-dot';
+        document.body.appendChild(dot);
+        
+        const outline = document.createElement('div');
+        outline.className = 'cursor-outline';
+        document.body.appendChild(outline);
+    }
 }
-
-
 
 // Loading Animation
 class LoadingAnimation {
@@ -361,7 +366,7 @@ class ActiveNavigation {
 
     init() {
         const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('.nav-links a');
+        const navLinks = document.querySelectorAll('nav a');
         
         window.addEventListener('scroll', () => {
             let current = '';
@@ -436,7 +441,7 @@ class RippleEffect {
                 overflow: hidden;
             }
             
-            .nav-links a.active {
+            nav a.active {
                 color: #60a5fa;
             }
         `;
@@ -444,60 +449,7 @@ class RippleEffect {
     }
 }
 
-// Initialize all effects
-document.addEventListener('DOMContentLoaded', () => {
-    // Initialize loading animation
-    new LoadingAnimation();
-    
-    // Initialize typing animation
-    const typingText = document.querySelector('.typing-text');
-    if (typingText) {
-        new TypingAnimation(typingText, 'Amirreza Asgharzadeh');
-    }
-    
-    // Initialize particle system
-    new ParticleSystem();
-    
-    // Initialize smooth scrolling
-    new SmoothScroll();
-    
-    // Initialize scroll animations
-    new ScrollAnimations();
-    
-    // Initialize 3D tilt effect
-    new TiltEffect();
-    
-    // Initialize cursor effect
-    new CursorEffect();
-    
-    // Parallax effect disabled to prevent spacing issues
-    // new ParallaxEffect();
-    
-    // Initialize active navigation
-    new ActiveNavigation();
-    
-    // Initialize ripple effect
-    new RippleEffect();
-    
-    console.log("3D Portfolio loaded successfully!");
-});
-
-// Add scroll-to-top functionality
-window.addEventListener('scroll', () => {
-    const scrollTop = document.querySelector('.scroll-to-top');
-    if (!scrollTop) {
-        createScrollToTop();
-    } else {
-        if (window.scrollY > 500) {
-            scrollTop.style.opacity = '1';
-            scrollTop.style.visibility = 'visible';
-        } else {
-            scrollTop.style.opacity = '0';
-            scrollTop.style.visibility = 'hidden';
-        }
-    }
-});
-
+// Scroll to top functionality
 function createScrollToTop() {
     const scrollTop = document.createElement('div');
     scrollTop.className = 'scroll-to-top';
@@ -543,3 +495,54 @@ function createScrollToTop() {
     
     document.body.appendChild(scrollTop);
 }
+
+// Initialize all effects
+document.addEventListener('DOMContentLoaded', () => {
+    // Initialize loading animation
+    new LoadingAnimation();
+    
+    // Initialize typing animation
+    const typingText = document.querySelector('.typing-text');
+    if (typingText) {
+        new TypingAnimation(typingText, 'Amirreza Asgharzadeh');
+    }
+    
+    // Initialize particle system
+    new ParticleSystem();
+    
+    // Initialize smooth scrolling
+    new SmoothScroll();
+    
+    // Initialize scroll animations
+    new ScrollAnimations();
+    
+    // Initialize 3D tilt effect
+    new TiltEffect();
+    
+    // Initialize cursor effect
+    new CursorEffect();
+    
+    // Initialize active navigation
+    new ActiveNavigation();
+    
+    // Initialize ripple effect
+    new RippleEffect();
+    
+    console.log("3D Portfolio loaded successfully!");
+});
+
+// Add scroll-to-top functionality
+window.addEventListener('scroll', () => {
+    const scrollTop = document.querySelector('.scroll-to-top');
+    if (!scrollTop) {
+        createScrollToTop();
+    } else {
+        if (window.scrollY > 500) {
+            scrollTop.style.opacity = '1';
+            scrollTop.style.visibility = 'visible';
+        } else {
+            scrollTop.style.opacity = '0';
+            scrollTop.style.visibility = 'hidden';
+        }
+    }
+});
