@@ -497,6 +497,65 @@ function createScrollToTop() {
 }
 
 // Initialize all effects
+// Mobile Menu Handler
+class MobileMenu {
+    constructor() {
+        this.hamburger = document.getElementById('hamburger');
+        this.mobileMenu = document.getElementById('mobile-menu');
+        this.menuItems = document.querySelectorAll('.mobile-menu-item');
+        this.isOpen = false;
+        
+        this.init();
+    }
+    
+    init() {
+        if (this.hamburger && this.mobileMenu) {
+            this.hamburger.addEventListener('click', () => this.toggleMenu());
+            
+            // Close menu when clicking on menu items
+            this.menuItems.forEach(item => {
+                item.addEventListener('click', () => this.closeMenu());
+            });
+            
+            // Close menu when clicking outside
+            this.mobileMenu.addEventListener('click', (e) => {
+                if (e.target === this.mobileMenu) {
+                    this.closeMenu();
+                }
+            });
+            
+            // Handle escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && this.isOpen) {
+                    this.closeMenu();
+                }
+            });
+        }
+    }
+    
+    toggleMenu() {
+        if (this.isOpen) {
+            this.closeMenu();
+        } else {
+            this.openMenu();
+        }
+    }
+    
+    openMenu() {
+        this.isOpen = true;
+        this.hamburger.classList.add('active');
+        this.mobileMenu.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+    }
+    
+    closeMenu() {
+        this.isOpen = false;
+        this.hamburger.classList.remove('active');
+        this.mobileMenu.classList.remove('active');
+        document.body.style.overflow = ''; // Restore scrolling
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize loading animation
     new LoadingAnimation();
@@ -527,6 +586,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Initialize ripple effect
     new RippleEffect();
+    
+    // Initialize mobile menu
+    new MobileMenu();
     
     console.log("3D Portfolio loaded successfully!");
 });

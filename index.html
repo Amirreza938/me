@@ -22,6 +22,34 @@
         .skill-fill {
             transition: width 1s ease;
         }
+        .mobile-menu {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+        .hamburger {
+            cursor: pointer;
+        }
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: linear-gradient(to right, #60a5fa, #a855f7);
+            margin: 5px 0;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
     </style>
 </head>
 <body class="m-0 p-0 box-border font-sans bg-gradient-to-br from-slate-900 to-slate-800 text-slate-200 leading-relaxed overflow-x-hidden">
@@ -33,7 +61,9 @@
     <!-- Navigation -->
     <nav class="fixed top-0 w-full bg-slate-800 backdrop-blur-sm border border-blue-400/30 z-50 px-8 py-4 flex justify-between items-center transition-all duration-300">
         <div class="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">AA</div>
-        <ul class="flex list-none gap-8">
+        
+        <!-- Desktop Menu -->
+        <ul class="hidden md:flex list-none gap-8">
             <li><a href="#home" data-section="home" class="text-slate-200 no-underline transition-all duration-300 relative hover:after:w-full after:content-[''] after:absolute after:bottom-[-5px] after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-blue-400 after:to-purple-500 after:transition-all after:duration-300">Home</a></li>
             <li><a href="#about" data-section="about" class="text-slate-200 no-underline transition-all duration-300 relative hover:after:w-full after:content-[''] after:absolute after:bottom-[-5px] after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-blue-400 after:to-purple-500 after:transition-all after:duration-300">About</a></li>
             <li><a href="#education" data-section="education" class="text-slate-200 no-underline transition-all duration-300 relative hover:after:w-full after:content-[''] after:absolute after:bottom-[-5px] after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-blue-400 after:to-purple-500 after:transition-all after:duration-300">Education</a></li>
@@ -41,20 +71,39 @@
             <li><a href="#projects" data-section="projects" class="text-slate-200 no-underline transition-all duration-300 relative hover:after:w-full after:content-[''] after:absolute after:bottom-[-5px] after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-blue-400 after:to-purple-500 after:transition-all after:duration-300">Projects</a></li>
             <li><a href="#contact" data-section="contact" class="text-slate-200 no-underline transition-all duration-300 relative hover:after:w-full after:content-[''] after:absolute after:bottom-[-5px] after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-blue-400 after:to-purple-500 after:transition-all after:duration-300">Contact</a></li>
         </ul>
+
+        <!-- Mobile Menu Button -->
+        <div class="hamburger md:hidden" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu fixed top-0 left-0 w-full h-full bg-slate-900/95 backdrop-blur-lg z-40 md:hidden" id="mobile-menu">
+        <div class="flex flex-col items-center justify-center h-full space-y-8">
+            <a href="#home" data-section="home" class="mobile-menu-item text-3xl text-slate-200 no-underline font-bold transition-all duration-300 hover:text-blue-400">Home</a>
+            <a href="#about" data-section="about" class="mobile-menu-item text-3xl text-slate-200 no-underline font-bold transition-all duration-300 hover:text-blue-400">About</a>
+            <a href="#education" data-section="education" class="mobile-menu-item text-3xl text-slate-200 no-underline font-bold transition-all duration-300 hover:text-blue-400">Education</a>
+            <a href="#skills" data-section="skills" class="mobile-menu-item text-3xl text-slate-200 no-underline font-bold transition-all duration-300 hover:text-blue-400">Skills</a>
+            <a href="#projects" data-section="projects" class="mobile-menu-item text-3xl text-slate-200 no-underline font-bold transition-all duration-300 hover:text-blue-400">Projects</a>
+            <a href="#contact" data-section="contact" class="mobile-menu-item text-3xl text-slate-200 no-underline font-bold transition-all duration-300 hover:text-blue-400">Contact</a>
+        </div>
+    </div>
 
     <!-- Home Section -->
     <section id="home" class="h-screen flex items-center justify-center relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700">
         <div class="text-center z-10">
-            <div class="bg-slate-800/80 backdrop-blur-lg rounded-3xl p-12 border border-blue-400/30 perspective-1000 transform-gpu transition-all duration-300 shadow-2xl hover:shadow-custom-hover hover:-translate-y-2">
-                <h1 class="text-5xl mb-4 bg-gradient-to-r from-blue-400 via-purple-500 to-amber-500 bg-clip-text text-transparent animate-gradient-shift">
+            <div class="bg-slate-800/80 backdrop-blur-lg rounded-3xl p-8 sm:p-12 border border-blue-400/30 perspective-1000 transform-gpu transition-all duration-300 shadow-2xl hover:shadow-custom-hover hover:-translate-y-2">
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl mb-4 bg-gradient-to-r from-blue-400 via-purple-500 to-amber-500 bg-clip-text text-transparent animate-gradient-shift">
                     <span class="typing-text inline-block"></span>
                     <span class="animate-blink">|</span>
                 </h1>
-                <p class="text-2xl mb-8 text-slate-400">Computer Engineering Student | Web Developer</p>
-                <div class="flex gap-4 justify-center">
-                    <a href="#about" class="px-8 py-4 border-none rounded-full no-underline font-bold transition-all duration-300 relative overflow-hidden bg-gradient-to-r from-blue-400 to-purple-500 text-white hover:-translate-y-1 hover:shadow-blue-glow">Explore</a>
-                    <a href="#contact" class="px-8 py-4 border-blue-400 rounded-full no-underline font-bold transition-all duration-300 relative overflow-hidden bg-transparent text-blue-400 border-2 border-blue-400 hover:-translate-y-1 hover:shadow-blue-glow">Contact</a>
+                <p class="text-lg sm:text-xl lg:text-2xl mb-8 text-slate-400">Computer Engineering Student | Web Developer</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#about" class="px-8 py-4 border-none rounded-full no-underline font-bold transition-all duration-300 relative overflow-hidden bg-gradient-to-r from-blue-400 to-purple-500 text-white hover:-translate-y-1 hover:shadow-blue-glow text-center">Explore</a>
+                    <a href="#contact" class="px-8 py-4 border-blue-400 rounded-full no-underline font-bold transition-all duration-300 relative overflow-hidden bg-transparent text-blue-400 border-2 border-blue-400 hover:-translate-y-1 hover:shadow-blue-glow text-center">Contact</a>
                 </div>
             </div>
         </div>
